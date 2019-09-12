@@ -1,0 +1,142 @@
+
+body {
+  background: #000;
+}
+
+*{box-sizing: border-box;}
+
+#sun, #earth, #earth1, #earth2,  #earth3 {
+  width: 50px;
+  height: 50px;
+  background: yellow;
+  border-radius: 50%;
+  box-shadow: 0 0 10px orange;
+  transform: translate(300px, 200px);
+  position: absolute;
+}
+
+#earth {
+  transform: translate(700px, 100px);
+  background: #3b93ff;
+  box-shadow: 0 0 10px white;
+}
+
+#sun {
+  width: 100px;
+  height: 100px;
+}
+
+#earth1 {
+  transform: translate(400px, 100px);
+  background: #5faa4f;
+  box-shadow: 0 0 10px white;
+}
+
+#earth2 {
+  transform: translate(200px, 200px);
+  background: red;
+  box-shadow: 0 0 10px white;
+}
+
+#earth3 {
+  transform: translate(350px, 400px);
+  background: white;
+  box-shadow: 0 0 10px white;
+}
+
+#space, .stars {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.stars {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,2,3,1)),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,2,3,1)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+  
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 200px;
+  max-width: 100%;
+  max-height: 100%;
+  
+}
+
+.form-container {
+  max-width: 100%;
+  padding: 10px;
+  background-color: whitesmoke;
+}
+
+
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: green;
+  resize: none;
+  min-height: 40px;
+  font-size: 30px;
+  overflow: auto;
+}
+
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+
+.form-container .cancel {
+  background-color: red;
+}
+
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}

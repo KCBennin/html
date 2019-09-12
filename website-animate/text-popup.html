@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="pop-style.css">
+        <script src="text.js"></script>
+        <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+        <script>
+        $(document).ready(function(){
+        $("button").click(function(){
+            var comment = $.trim($("#comment").val());
+            if(comment != ""){
+                // Show alert dialog if value is not blank
+                alert(comment);
+            }
+        });
+        
+        });
+
+        </script>
+        
+        
+        
+    </head>
+    <body>
+
+        <style>
+
+            * {box-sizing: border-box;}
+
+
+            .open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 80px;
+}
+
+
+.chat-popup {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 200px;
+  max-width: 100%;
+  max-height: 100%;
+  
+}
+
+
+.form-container {
+  max-width: 100%;
+  padding: 10px;
+  background-color: whitesmoke;
+}
+
+
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: green;
+  resize: none;
+  min-height: 40px;
+  font-size: 30px;
+  overflow: auto;
+}
+
+
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+
+.form-container .cancel {
+  background-color: red;
+}
+
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+        </style>
+
+
+
+        <button class="open-button" onclick="openForm()">WRITER</button>
+
+        <div class="chat-popup" id="myForm">
+
+
+            <form action="/submit" id="form" class="form-container">
+                <h1>Beginning</h1>
+
+
+                <textarea placeholder="What is your misssion.." name="msg" id="text" 
+                          cols="45" rows="3" maxlength="50" required></textarea>
+
+
+                <input type="submit" value="Go" formaction="space.html">
+                <input type="button" onclick="myFunction()" value="Delete">
+
+                <input type="button" onclick="save()" value="Save">
+
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+
+                <input 
+                    onclick="responsiveVoice.speak($('#text').val(), $('#voiceselection').val());" 
+                    type="button" 
+                    value="Play" 
+                    />
+
+            </form>
+
+            <select id="voiceselection"></select> 
+
+
+
+        </div>  
+
+        <script>
+            function myFunction() {
+                document.getElementById("form").reset();
+            }
+        </script>
+
+        <script>
+            function save() {
+                var x = document.getElementById("text").value;
+                document.getElementById("script").innerHTML = x;
+
+            }
+        </script>
+
+
+        <script>
+            //Populate voice selection dropdown
+            var voicelist = responsiveVoice.getVoices();
+            var vselect = $("#voiceselection");
+            $.each(voicelist, function () {
+                vselect.append($("<option />").val(this.name).text(this.name));
+            });
+        </script>    
+
+
+        <script>
+
+            $(function()
+{
+    $("#form").validate(
+      {
+          msg: 
+          {
+            required: true,
+            minlength:50
+          }
+          
+      });	
+});
+        </script>
+
+        <p id="script"></p>
+        
+        <textarea id="comment" rows="5" cols="50"></textarea>
+    <p><button type="button">Get Value</button></p>
+    <p><strong>Note:</strong> Type something in the textarea and click the button to see the result.</p>
+
+    </body>
+</html>

@@ -1,0 +1,119 @@
+*{
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: 'Dancing Script', cursive;
+}
+
+.stage {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.stage:before{
+  content: '';
+  background: url('https://c8.staticflickr.com/4/3867/15074322727_d1f36e9df1_k.jpg') center/cover rebeccapurple;
+  animation: lonely 20s ease infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+}
+
+@keyframes lonely{
+  0% {transform: scale(1)}
+  50%{transform: scale(2)}
+  100%{transform: scale(1)}
+}
+
+.stage::after {
+  content: '';
+  font-size: 4em;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  font-size: 2em;
+  
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+  
+  
+}
+
+.screen {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  background: green;
+}
+
+.screen.left,
+.screen.right {
+  background: #ee8c25 linear-gradient(0deg, #ee8c25 0%, #ee8c25 10%, #e28523 10%, #e28523 20%, #d17b21 19%, #d67e21 21%, #d67e21 20%, #d67e21 30%, #c6741f 29%, #ca7720 31%, #ca7720 30%, #ca7720 40%, #ba6d1d 39%, #be701e 41%, #be701e 40%, #be701e 50%, #ae661b 49%, #b2691c 51%, #b2691c 50%, #b2691c 60%, #a25f19 59%, #a7621a 61%, #a7621a 60%, #a7621a 70%, #965817 69%, #9b5b18 71%, #9b5b18 70%, #9b5b18 80%, #8a5116 79%, #8f5416 81%, #8f5416 80%, #8f5416 90%, #7e4a14 89%, #834d14 91%, #834d14 90%, #834d14 100%);
+  transition: all ease 1.5s;
+}
+
+.left {
+  left: 0;
+}
+.right {
+  right: 0;
+}
+input[type="checkbox"] {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+  opacity: 0;
+}
+.stage input[type="checkbox"]:checked ~ .left {
+  transform: translateX(-100%);
+}
+.stage input[type="checkbox"]:checked ~ .right {
+  transform: translateX(100%);
+}
+
+span.left, span.right{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+}
+
+span.left{
+  justify-content: flex-end;
+}
+
+span.right{
+  justify-content: flex-start;
+}
+
+
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}

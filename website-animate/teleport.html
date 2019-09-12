@@ -1,0 +1,75 @@
+<head>
+
+    <link rel="stylesheet" href="styles/teleport-style.css" />
+      <script src="app.js"></script>
+      
+      <style>
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.round {
+  border-radius: 50%;
+}
+</style>
+</head>
+
+<body>
+    
+    
+    
+    <div class="first content">
+        <div class="circle"></div>
+    </div>
+        
+        
+ 
+    <div class="second content">
+        <div class="circle"></div>
+
+    </div> 
+  
+    
+    
+    <button class="open-button" onclick="openForm()">WRITE</button>
+
+        <div class="chat-popup" id="myForm">
+            
+            <form action="eclipse.html" class="form-container">
+                <h1>Chat</h1>
+
+                <label for="msg"><b>Message</b></label>
+                <textarea placeholder="Type message.." name="msg" required></textarea>
+
+                <button type="submit" class="btn">Send</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                <input type="reset" value="Delete">
+            </form>
+       
+        </div>   
+   
+
+        
+<form>
+  <input type="button" value="Go back!" onclick="history.back()">
+</form>
+     
+
+</body>

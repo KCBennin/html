@@ -1,0 +1,194 @@
+
+html, body {
+    
+    height: 100%;
+    width:  100%;
+    overflow: hidden;
+    margin: 0;   
+}
+
+*{box-sizing: border-box;}
+
+.grass, .sky, .road {
+    position: relative;
+}
+
+.sky {
+    height: 40%;
+    background:orange;
+}
+
+.grass {
+    height: 30%;
+    background: lightsalmon;
+}
+
+.road {
+    height: 30%;
+    background: blue;
+    box-sizing: border-box;
+    width: 100%;
+    
+}
+
+.lines {
+    box-sizing: border-box;
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    top: 45%;
+   
+}
+
+.alien {
+    position: absolute;
+    top: -40px;
+    left: 0px;   
+    animation: drive 12s both infinite linear,
+        jump 0.3s 1.2s ease;
+   
+}
+
+.alien4 {
+    position: absolute;
+    top: 10px;
+    left: 0px;   
+    animation-name: drive;
+    animation-duration: 20s;
+    animation-fill-mode: both;
+    animation-iteration-count: 3;
+    animation-timing-function: ease-in;
+    animation-direction: reverse;
+    
+}
+
+.alien9 {
+    position: absolute;
+    top: -10px;
+    left: 0px;   
+    animation-name: drive;
+    animation-duration: 20s;
+    animation-fill-mode: both;
+    animation-iteration-count: 3;
+    animation-timing-function: linear;
+   
+    
+}
+
+
+
+
+
+.alien5 {
+    position: absolute;
+    top: -400px;
+    left: 0px;   
+    animation: drive 16s both infinite linear,
+        jump 0.3s 1.2s ease;
+
+    
+}
+
+.alien6 {
+    position: absolute;
+    top: -400px;
+    left: 0px;   
+    animation: drive 10s both infinite linear,
+        jump 0.3s 1.2s ease;
+
+    
+}
+
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 80px;
+}
+
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 200px;
+  max-width: 100%;
+  max-height: 100%;
+  
+}
+
+
+.form-container {
+  max-width: 100%;
+  padding: 10px;
+  background-color: whitesmoke;
+}
+
+
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: green;
+  resize: none;
+  min-height: 40px;
+  font-size: 30px;
+  overflow: auto;
+}
+
+
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+
+.form-container .cancel {
+  background-color: red;
+}
+
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+
+
+/*
+animation
+*/
+
+@keyframes drive {
+    from{ transform: translateX(-200px)}
+    to{ transform: translateX(1000px)}
+}
+
+@keyframes wind {
+    from{left: -300px}
+    to{ left: 100%}
+}
+

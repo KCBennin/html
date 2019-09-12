@@ -1,0 +1,88 @@
+
+<head>
+    <link rel="stylesheet" href="styles/day-style.css" />
+    <script src="app.js"></script>
+ 
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    
+</head>
+
+<body>
+    
+  <div class="wrap">
+    <div class="sun"></div>
+    <div class="moon"></div>
+    <div class="one"><div class="cloud"></div></div>
+    <div class="two"><div class="cloud"></div></div>
+    <div class="three"><div class="cloud"></div></div>
+    <div class="ground"></div>
+    <div class="tree"></div>
+    <div class="tree2"></div>
+    <div class="tree3"></div>
+    <div class="stump"></div>
+     <div class="hill"></div>
+    <div class="hill2"></div>
+    <div class="flower">
+    <i><i><i><i><i></i></i></i></i></i>
+    <div class="dot"></div>
+    </div>
+  </div>
+
+     <div class="flower">
+    <i><i><i><i><i></i></i></i></i></i>
+    <div class="dot"></div>
+    </div>
+      <div class="flower2">
+    <i><i><i><i><i></i></i></i></i></i>
+    <div class="dot"></div>
+    </div>
+      <div class="flower3">
+    <i><i><i><i><i></i></i></i></i></i>
+    <div class="dot"></div>
+    </div>
+    
+    
+    <button class="open-button" onclick="openForm()">WRITER</button>
+
+        <div class="chat-popup" id="myForm">
+
+            <form action="/submit" id="form" class="form-container">
+                <h1>Arrive on Planet</h1>
+
+
+                <textarea minlength="10" maxlength="11" placeholder="Which planet are you going to land on.." name="msg" id="text" 
+                          cols="45" rows="3"  required></textarea>
+
+
+                <input type="submit" value="Next" formaction="running.html">
+                <input type="button" onclick="myFunction()" value="Delete">
+
+                <input type="button" onclick="save()" value="Save">
+
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+
+            </form>
+
+        </div>  
+
+        <script>
+            function myFunction() {
+                document.getElementById("form").reset();
+            }
+        </script>
+
+        <script>
+            function save() {
+                var x = document.getElementById("text").value;
+                document.getElementById("script").innerHTML = x;
+
+            }
+        </script>
+
+        <p id="script"></p>
+
+
+
+    
+</body>

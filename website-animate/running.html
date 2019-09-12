@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="styles/running-style.css">
+        <script src="run.js"></script>
+        <script src="app.js"></script>
+        
+         <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <div class="sky">
+
+        </div>
+
+        <div class="grass"></div>
+
+        <div class="road">
+            <div class="lines"></div>
+
+             <img class="alien9" alt="MARIO"  src="img/wiz.png"
+                 style="height: 100px; width: 100px;">
+
+            <img class="alien4" alt="MARIO"  src="img/alien4.png"
+                 style="height: 100px; width: 100px;">
+
+            
+
+        </div>
+
+        <button class="open-button" onclick="openForm()">WRITER</button>
+
+        <div class="chat-popup" id="myForm">
+
+
+            <form action="/submit" id="form" class="form-container">
+                <h1>Meet the Aliens</h1>
+
+
+                <textarea minlength="10" maxlength="200" placeholder="What is your misssion.." name="msg" id="text" 
+                          cols="45" rows="3"  required></textarea>
+
+
+                <input type="submit" value="Next" formaction="scary.html">
+                <input type="button" onclick="myFunction()" value="Delete">
+
+                <input type="button" onclick="save()" value="Save">
+
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+
+            </form>
+
+            <select id="voiceselection"></select> 
+
+            <input 
+                onclick="responsiveVoice.speak($('#text').val(), $('#voiceselection').val());" 
+                type="button" 
+                value="Play" 
+                />
+
+        </div>  
+
+        <script>
+            function myFunction() {
+                document.getElementById("form").reset();
+            }
+        </script>
+
+        <script>
+            function save() {
+                var x = document.getElementById("text").value;
+                document.getElementById("script").innerHTML = x;
+
+            }
+        </script>
+
+        <script>
+            //Populate voice selection dropdown
+            var voicelist = responsiveVoice.getVoices();
+            var vselect = $("#voiceselection");
+            $.each(voicelist, function () {
+                vselect.append($("<option />").val(this.name).text(this.name));
+            });
+        </script>    
+
+
+        <script>
+
+            $(function ()
+            {
+                $("#form").validate(
+                        {
+                            msg:
+                                    {
+                                        required: true,
+                                        minlength: 10
+                                    }
+
+                        });
+            });
+        </script>
+
+        <p id="script"></p>
+
+
+    </body>
+
+</html>

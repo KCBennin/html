@@ -1,0 +1,356 @@
+html {
+    animation: fearBackground 20s;
+    animation-duration: 8s;
+}
+body {
+    background-color: black;
+}
+
+*{box-sizing: border-box;}
+
+.pump {
+    padding-top: 0;
+    width: 400px;
+    height: 320px;
+    background: #ff6f2a;
+    margin: 0 auto;
+    margin-top: 10%;
+    border-radius: 160px;
+    position: relative;
+    z-index: 1;
+    animation: attack 8s linear;
+}
+.pump:before {
+    content: "";
+    position: absolute;
+    top: -28px;
+    left: 194px;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 40px solid #5faa4f;
+    border-radius: 5px;
+    margin: 0 auto;
+    z-index: -1;
+    animation: fearNose 8s linear;;
+}	
+.strips {
+    width: 330px;
+    height: 320px;
+    border-radius: 50%;
+    position: absolute;
+    left: 36px;
+    right: 0;
+    border-left: 2px solid #ad4b07;
+    border-right: 2px solid #ac491a;
+    animation: fearStrips 8s linear;;
+}
+.strips:after {
+    content:"";
+    width: 200px;
+    height: 320px;
+    border-radius: 50%;
+    position: absolute;
+    left: 67px;
+    right: 0;
+    border-left: 2px solid #ad4b07;
+    border-right: 2px solid #ac491a;
+    animation: fearStrips 8s linear;
+}
+.eyes {
+    position: absolute;
+    top: 85px;
+    left: 50px;
+    right: 50px;
+}
+
+
+.eyes > span {
+    display: block;
+    height: 50px;
+    width: 100px;
+    background: purple;
+    position: absolute;
+    border-bottom-left-radius: 90px;
+    border-bottom-right-radius: 90px;
+}
+.eyes .right-eye {
+    right: 10px;
+    animation: angryEyesRight 20s; ;
+    border-radius: 10% 10% 60% 40%/30% 0% 95% 50%;
+}	
+.eyes .right-eye:after {
+    content: "";
+    box-shadow: 12px 0 0 0 #ab491a;
+    border-right: 1px solid #ab491a;
+    height: 100%;
+    width: 88%;
+    border-radius: inherit;
+    z-index: 3;
+    position: absolute;
+}		
+.eyes .left-eye {
+    left: 10px;
+    animation: angryEyesLeft 20s; ;
+    border-radius: 10% 10% 40% 60%/0% 30% 50% 95%;
+}
+.eyes .left-eye:before {
+    content: "";
+    left: 12px;
+    box-shadow: -12px 0 0 0 #AD4B07;
+    border-right: 1px solid #AD4B07;
+    height: 100%;
+    width: 87%;
+    border-radius: inherit;
+    z-index: 3;
+    position: absolute;
+}
+
+
+.nose {
+    position: absolute;
+    top: 48%;
+    left: 175px;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 40px solid #ac491a;
+    animation: fearNose 20s linear;
+}
+.nose:after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: -23px;
+    height: 0;
+    width: 0;
+    border-left: 23px solid transparent;
+    border-right: 22px solid transparent;
+    border-bottom: 30px solid #000;	
+
+}
+.simle {
+    position: absolute;
+    top: 110px;
+    left: 92px;
+    height: 140px;
+    width: 220px;
+    display: block;
+    border-radius: 150px;
+    border-bottom: 45px solid #000;
+    z-index: 3;
+    animation: fearSimle 8s linear;
+}
+.teath {
+    position: absolute;
+    top: 133px;
+    left: 0;
+    right: 0;
+}
+.teath:after,.teath:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 28%;
+    width: 1px;
+    height: 1px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid #ff6f2a;
+    animation: fearTeathTop 8s linear;
+}
+
+.teath:after {
+    right: 24%;
+    left: auto;
+}
+.teath-bottom {
+    position: absolute;
+    top: 169px;
+    left: 0;
+    right: 0;
+}
+.teath-bottom:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 45%;
+    width: 1px;
+    height: 1px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid #ff6f2a;
+    animation: fearTeathBottom 8s linear;
+}
+
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 80px;
+}
+
+
+.chat-popup {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 200px;
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 7;
+  
+}
+
+
+.form-container {
+  max-width: 100%;
+  padding: 10px;
+  background-color: whitesmoke;
+}
+
+
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: green;
+  resize: none;
+  min-height: 40px;
+  font-size: 30px;
+  overflow: auto;
+}
+
+
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+
+.form-container .cancel {
+  background-color: red;
+}
+
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+
+
+@keyframes nome-nome-1 {
+    0% {
+        height: 20px;
+    }
+    25% {
+        height: 30px;
+    }
+    50% {
+        height: 40px;
+    }
+    85% {
+        height: 30px;
+    }
+    100% {
+        height: 20px;
+    }
+}	
+@keyframes angryEyesLeft {
+    30% {
+        transform: rotate(0deg);
+        background: rgb(0, 0, 0);
+        box-shadow: none;				
+    }
+    40%,50%,60%,80% {
+        transform: rotate(25deg);
+        background: rgb(255, 255, 0);
+        box-shadow: 0 0 50px 2px rgba(255, 255, 0, 0.8);
+    }
+    100% {
+        transform: rotate(0deg);
+        background: rgb(0, 0, 0);
+        box-shadow: none;						
+    }
+}
+@keyframes angryEyesRight {
+    30% {
+        transform: rotate(0deg);
+        background: rgb(0, 0, 0);
+        box-shadow: none;				
+    }
+    40%,50%,60%,80% {
+        transform: rotate(-25deg);
+        background: rgb(255, 255, 0);
+        box-shadow: 0 0 50px 2px rgba(255, 255, 0, 0.8);
+    }
+    100% {
+        transform: rotate(0deg);
+        background: rgb(0, 0, 0);
+        box-shadow: none;						
+    }
+}		
+@keyframes attack {
+    30% {transform: scale(1);background: #ff6f2a;}
+    40%,50%,60%,80% {transform: scale(2);background: #000;}
+    100% {transform: scale(1);background: #ff6f2a;}
+}	
+
+@keyframes fearBackground {
+    30% {background: #fff;}
+    40%,50%,60%,80% {background: #000;}
+    100% {background: #fff;}
+}
+@keyframes fearPump {
+    30% {background: #ff6f2a;}
+    40%,50%,60%,80% {background: #000;}
+    100% {background: #ff6f2a;}
+}	
+@keyframes fearStrips {
+    30% {opacity: 1;}
+    40%,50%,60%,80% {opacity: 0;}
+    100% {opacity: 1;}
+}	
+@keyframes fearNose {
+    30% {opacity: 1;}
+    40%,50%,60%,80% {opacity: 0;}
+    100% {opacity: 1;}
+}		
+@keyframes fearSimle {
+    30% {border-color: #000;}
+    40%,50%,60%,80% {border-color: #fbf401;}
+    100% {border-color: #000;}
+}
+@keyframes fearTeathTop {
+    30% {border-top-color: #ff6f2a;}
+    40%,50%,60%,80% {border-top-color: #000;}
+    100% {border-top-color: #ff6f2a;}
+}
+@keyframes fearTeathBottom {
+    30% {border-bottom-color: #ff6f2a;}
+    40%,50%,60%,80% {border-bottom-color: #000;}
+    100% {border-bottom-color: #ff6f2a;}
+}	

@@ -1,0 +1,171 @@
+body {
+    background-color: black;
+}
+
+ *{box-sizing: border-box;}
+
+.spiralContainer, .spiral, .wizard {
+    position: absolute;
+}
+
+.spiralContainer {
+  border-radius: 50%;
+  width:500px;
+  height:500px;
+  overflow:hidden;
+  margin:20px;
+  
+  -webkit-animation: spin 3s linear 0s infinite reverse;
+  -moz-animation: spin 3s linear 0s infinite reverse;  
+  -ms-animation: spin 3s linear 0s infinite reverse;
+  -o-animation: spin 3s linear 0s infinite reverse;
+  animation: spin 3s linear 0s infinite reverse;
+  
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -ms-animation-play-state: paused;
+  -o-animation-play-state: paused;  
+  animation-play-state: paused;
+}
+
+
+.spiral {
+  width:500px;
+  height:500px;
+  border-radius: 50%;
+  background-image: url(http://farm7.staticflickr.com/6115/6319704650_0a2bd0dcef_o.jpg);
+  background-repeat:no-repeat;
+  background-position:50% 50%;
+  
+  -webkit-animation: spin 6s linear 0s infinite normal;
+  -moz-animation: spin 6s linear 0s infinite normal;
+  -ms-animation: spin 6s linear 0s infinite normal;
+  -o-animation: spin 6s linear 0s infinite normal;
+  animation: spin 6s linear 0s infinite normal;
+  
+}
+
+.ufo {
+  width:500px;
+  height:500px;
+  border-radius: 50%;
+  background-image: url(ufo.png);
+  background-repeat:no-repeat;
+  background-position:80% 80%;
+  
+  -webkit-animation: spin 6s linear 0s infinite normal;
+  -moz-animation: spin 6s linear 0s infinite normal;
+  -ms-animation: spin 6s linear 0s infinite normal;
+  -o-animation: spin 6s linear 0s infinite normal;
+  animation: spin 6s linear 0s infinite normal;
+ 
+  z-index: 1;
+}
+
+
+.spiralContainer:hover {
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  -ms-animation-play-state: running;
+  -o-animation-play-state: running;
+  animation-play-state: running;
+}
+
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 80px;
+}
+
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 200px;
+  max-width: 100%;
+  max-height: 100%;
+  
+}
+
+
+.form-container {
+  max-width: 100%;
+  padding: 10px;
+  background-color: whitesmoke;
+}
+
+
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: green;
+  resize: none;
+  min-height: 40px;
+  font-size: 30px;
+  overflow: auto;
+}
+
+
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+
+.form-container .cancel {
+  background-color: red;
+}
+
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+
+@keyframes spin {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+@-webkit-keyframes spin {
+  0% {-webkit-transform: rotate(360deg); }
+  100% { -webkit-transform: rotate(0deg); }
+}
+@-ms-keyframes spin {
+  0% {-ms-transform: rotate(360deg); }
+  100% { -ms-transform: rotate(0deg); }
+}
+@-moz-keyframes spin {
+  0% { -moz-transform: rotate(360deg); }
+  100% { -moz-transform: rotate(0deg); }
+}
+@-o-keyframes spin {
+  0% { -o-transform: rotate(360deg); }
+  100% { -o-transform: rotate(0deg); }
+}

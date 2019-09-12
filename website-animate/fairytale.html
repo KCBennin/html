@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>LEAVES FALLING </title>
+        <link rel="stylesheet" type="text/css" href="styles/style-fairytale.css">   
+         <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="app.js"></script>
+        
+    </head>
+    <body>
+        <section>
+            <div class="set">
+                <div><img src="nature/leaf1.png" width="80" height="80"></div>
+                <div><img src="nature/leaf2.png" width="80" height="80"></div>
+                <div><img src="nature/leaf3.png" width="80" height="80"></div>
+                <div><img src="nature/leaf4.png" width="80" height="80"></div>
+              <div><img src="nature/leaf1.png" width="80" height="80"></div>
+                <div><img src="nature/leaf2.png" width="80" height="80"></div>
+                <div><img src="nature/leaf3.png" width="80" height="80"></div>
+                <div><img src="nature/leaf4.png" width="80" height="80"></div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="set set2">
+                <div><img src="nature/leaf1.png" width="80" height="80"></div>
+                <div><img src="nature/leaf2.png" width="80" height="80"></div>
+                <div><img src="nature/leaf3.png" width="80" height="80"></div>
+                <div><img src="nature/leaf4.png" width="80" height="80"></div>
+                <div><img src="nature/leaf1.png" width="80" height="80"></div>
+                <div><img src="nature/leaf2.png" width="80" height="80"></div>
+                <div><img src="nature/leaf3.png" width="80" height="80"></div>
+                <div><img src="nature/leaf4.png" width="80" height="80"></div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="set set3">
+                <div><img src="nature/leaf1.png" width="80" height="80"></div>
+                <div><img src="nature/leaf2.png" width="80" height="80"></div>
+                <div><img src="nature/leaf3.png" width="80" height="80"></div>
+                <div><img src="nature/leaf4.png" width="80" height="80"></div>
+                 <div><img src="nature/leaf1.png" width="80" height="80"></div>
+                <div><img src="nature/leaf2.png" width="80" height="80"></div>
+                <div><img src="nature/leaf3.png" width="80" height="80"></div>
+                <div><img src="nature/leaf4.png" width="80" height="80"></div>
+            </div>
+        </section>
+        
+        <button class="open-button" onclick="openForm()">WRITER</button>
+
+        <div class="chat-popup" id="myForm">
+
+
+            <form action="/submit" id="form" class="form-container">
+                <h1>Beginning</h1>
+
+
+                <textarea minlength="10" maxlength="200" placeholder="What is your misssion.." name="msg" id="text" 
+                          cols="45" rows="3"  required></textarea>
+
+
+                <input type="submit" value="Next" formaction="orbit.html">
+                <input type="button" onclick="myFunction()" value="Delete">
+
+                <input type="button" onclick="save()" value="Save">
+
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+
+            </form>
+
+            <select id="voiceselection"></select> 
+
+            <input 
+                onclick="responsiveVoice.speak($('#text').val(), $('#voiceselection').val());" 
+                type="button" 
+                value="Play" 
+                />
+
+            <div>
+                <audio controls autoplay>
+                    <source src="distant.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+        </div>  
+
+        <script>
+            function myFunction() {
+                document.getElementById("form").reset();
+            }
+        </script>
+
+        <script>
+            function save() {
+                var x = document.getElementById("text").value;
+                document.getElementById("script").innerHTML = x;
+
+            }
+        </script>
+
+
+        <script>
+            //Populate voice selection dropdown
+            var voicelist = responsiveVoice.getVoices();
+            var vselect = $("#voiceselection");
+            $.each(voicelist, function () {
+                vselect.append($("<option />").val(this.name).text(this.name));
+            });
+        </script>    
+
+
+        <script>
+
+            $(function ()
+            {
+                $("#form").validate(
+                        {
+                            msg:
+                                    {
+                                        required: true,
+                                        minlength: 10
+                                    }
+
+                        });
+            });
+        </script>
+
+        <p id="script"></p>
+
+        
+    </body>
+</html>
